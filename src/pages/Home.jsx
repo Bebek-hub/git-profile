@@ -4,17 +4,18 @@ import EachRepo from "../components/EachRepo";
 
 const Home = () => {
   const [repos, setRepos] = useState([]);
-  useEffect(() =>
-        {fetch("https://api.github.com/users/bebek-hub/repos")
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-            setRepos(data);
-          })
-          .catch((err) => {
-            console.log(err.message);
-          })}
-        , []);
+  useEffect(() => {
+    const fetchRepos = async () =>
+      await fetch("https://api.github.com/users/bebek-hub/repos")
+        .then((response) => response.json())
+        .then((data) => {
+          setRepos(data);
+        })
+        // .catch((err) => {
+        //   console.log(err.message);
+        // });
+        fetchRepos()
+  }, []);
 
   return (
     <section>
@@ -27,7 +28,9 @@ const Home = () => {
       </header>
 
       <div className="repo_container">
-        {repos.map((repo) => (<EachRepo key={repo.id}/>))}
+        {repos.map((repo) => (
+          <EachRepo key={repo.id} repo={repo} />
+        ))}
       </div>
     </section>
   );
