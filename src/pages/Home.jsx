@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { CiSearch } from "react-icons/ci";
 import EachRepo from "../components/EachRepo";
+import ErrorPage from "../components/ErrorPage";
 
 const Home = () => {
   const [repos, setRepos] = useState([]);
+  const [errors, setErrors] = useState('')
   useEffect(() => {
     const fetchRepos = async () =>
       await fetch("https://api.github.com/users/bebek-hub/repos")
@@ -11,11 +13,14 @@ const Home = () => {
         .then((data) => {
           setRepos(data);
         })
-        // .catch((err) => {
-        //   console.log(err.message);
-        // });
-        fetchRepos()
+    .catch((err) => {
+      setErrors(err.message)
+      console.log(`the error is: ${err.message}`)
+    });
+    fetchRepos();
   }, []);
+
+  if (errors) return <ErrorPage error={errors} />
 
   return (
     <section>
@@ -31,6 +36,8 @@ const Home = () => {
         {repos.map((repo) => (
           <EachRepo key={repo.id} repo={repo} />
         ))}
+
+        {/* <ErrorPage error={error} /> */}
       </div>
     </section>
   );

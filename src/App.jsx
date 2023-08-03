@@ -1,6 +1,7 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Home from "./pages/Home"
-import DisplayRepo from "./pages/DisplayRepo"
+import ErrorPage from "./components/ErrorPage"
+// import DisplayRepo from "./pages/DisplayRepo"
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="display-repo" element={<DisplayRepo />} />
+          <Route path="error-page" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter> 
     </main>
