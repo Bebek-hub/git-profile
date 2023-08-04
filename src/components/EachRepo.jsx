@@ -8,7 +8,7 @@ const EachRepo = (repos) => {
         <h2 className="repo_title">{repos.repo.name}</h2>
         <p className="repo_description">
           {repos.repo.description}
-          {/* {repos.repo.description.length > 10
+          {/* {repos.repo.description.length > 10 
             ? repos.repo.description.substr(0, 10) + "..."
             : repos.repo.description} */}
         </p>

@@ -5,7 +5,10 @@ import ErrorPage from "../components/ErrorPage";
 
 const Home = () => {
   const [repos, setRepos] = useState([]);
-  const [errors, setErrors] = useState('')
+  const [errors, setErrors] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(5);
+
   useEffect(() => {
     const fetchRepos = async () =>
       await fetch("https://api.github.com/users/bebek-hub/repos")
@@ -22,6 +25,10 @@ const Home = () => {
 
   if (errors) return <ErrorPage error={errors} />
 
+  const indexOfLastRepo = currentPage * postsPerPage;  
+  const indexOfFirstRepo = indexOfLastRepo - postsPerPage;
+  const currentRepos = repos.slice(indexOfFirstRepo, indexOfLastRepo);
+
   return (
     <section>
       <header>
@@ -34,7 +41,7 @@ const Home = () => {
 
       <div className="repo_container">
         {repos.map((repo) => (
-          <EachRepo key={repo.id} repo={repo} />
+          <EachRepo key={repo.id} repo={currentRepos} />
         ))}
 
         {/* <ErrorPage error={error} /> */}
