@@ -9,7 +9,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="error-page" element={<ErrorPage />} />
+          <Route path="*" element={<ErrorPage />} /> 
+          {/* This shows an error page when an unknown url is added */}
         </Routes>
       </BrowserRouter> 
     </main>
