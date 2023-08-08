@@ -6,8 +6,8 @@ import ErrorPage from "../components/ErrorPage";
 const Home = () => {
   const [repos, setRepos] = useState([]);
   const [errors, setErrors] = useState('');
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [postsPerPage, setPostsPerPage] = useState(5);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(5);
 
   useEffect(() => {
     const fetchRepos = async () =>
@@ -25,9 +25,12 @@ const Home = () => {
 
   if (errors) return <ErrorPage error={errors} />
 
-  // const indexOfLastRepo = currentPage * postsPerPage;  
-  // const indexOfFirstRepo = indexOfLastRepo - postsPerPage;
-  // const currentRepos = repos.slice(indexOfFirstRepo, indexOfLastRepo);
+  const total = repos?.length;
+  console.log(total)
+  const indexOfLastRepo = currentPage * postsPerPage;  
+  const indexOfFirstRepo = indexOfLastRepo - postsPerPage;
+  const currentRepos = repos.slice(indexOfFirstRepo, indexOfLastRepo);
+  console.log(currentRepos)
 
   return (
     <section>
@@ -43,8 +46,6 @@ const Home = () => {
         {repos.map((repo) => (
           <EachRepo key={repo.id} repo={repo} />
         ))}
-
-        {/* <ErrorPage error={error} /> */}
       </div>
     </section>
   );
