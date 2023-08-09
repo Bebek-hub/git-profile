@@ -13,7 +13,7 @@
   --white-color: #ffffff;
   --white-color-trans: #ffffffb6;
   --red-color: #b73a3a;
-  --main-padding: 1rem;
+  --main-padding: 1.5rem;
   --main-margin: 1rem;
 }
 
@@ -34,7 +34,7 @@ body {
   color: var(--white-color);
   background-color: var(--main-color);
   box-shadow: rgba(249, 249, 249, 0.224) 0px 1px 4px;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -67,26 +67,27 @@ body {
 
 /* styling home page */
 
-.home_header {
-  display: flex;
+.home_container {
+  padding: 4rem 1.5rem 1.5rem;
 }
 
-
+/* styling the display-repo */
+.repo_container {
+  padding: 2rem 1.5rem 1.5rem;
+}
 
 
 /* styling each-repo page */
-.repo {
-  background-color: var(--light-main-color);
-  border: 1px solid var(--light-main-color);
-  padding: 1rem, 0.8rem;
+.each_repo-container {
   line-height: 1.5rem;
   display: grid;
-  gap: 1rem;
+  grid-column-gap: 1rem;
 }
 
-Link {
+.each_repo {
   text-decoration: none;
-  color: var(--white-color)
+  color: var(--white-color);
+  background-color: var(--white-color-trans);
 }
 
 /* .repo_title {

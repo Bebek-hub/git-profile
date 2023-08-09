@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { CiSearch } from "react-icons/ci";
+// import { CiSearch } from "react-icons/ci";
 import EachRepo from "../components/EachRepo";
 import ErrorPage from "../components/ErrorPage";
+import Header from "./Header";
 
 const Home = () => {
   const [repos, setRepos] = useState([]);
@@ -34,16 +35,20 @@ const Home = () => {
   // for the first page, nothing is skipped. the second page, 5 is skipped which means the whole of first page. the third page, ten is skipped which means the whole of first and second page. and so on.
 
   return (
-    <section>
-      <header className="repo_header">
+    <>
+    <Header />
+    <section className="repo_container">
+      {/* <header className="repo_header">
         <h1 className="logo">Favvy</h1>
         <input type="text" autoFocus placeholder="search..." />
         <button className="btn">
           <CiSearch />
         </button>
-      </header>
+      </header> */}
 
-      <div className="repo_container">
+      
+
+      <div>
         {/* {repos.map((repo) => (
           <EachRepo key={repo.id} repo={repo} />
         ))} */}
@@ -51,7 +56,9 @@ const Home = () => {
         {repos?.slice(skip, skip + perPage).map((repo) => (
           <EachRepo key={repo.id} repo={repo} />
         ))}
+      </div>
 
+      <div className="repo_container-pagination">
         <button
           disabled={currentPage <= 1}
           onClick={() => setCurrentPage((prev) => prev - 1)}
@@ -80,11 +87,14 @@ const Home = () => {
 
         {Array.from({ length: pages }, (value, index) => index + 1).map(
           (each) => (
-            <button key={each} onClick={() => setCurrentPage(each)}>{each}</button>
+            <button key={each} onClick={() => setCurrentPage(each)}>
+              {each}
+            </button>
           )
         )}
       </div>
     </section>
+    </>
   );
 };
 
