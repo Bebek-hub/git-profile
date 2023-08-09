@@ -1,5 +1,5 @@
 
-
+// add an image 
 function ErrorPage(errors) {
   return (
     <div className="error_container">
