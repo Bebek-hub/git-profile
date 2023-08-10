@@ -37,7 +37,7 @@ const Home = () => {
   return (
     <>
     <Header />
-    <section className="repo_container">
+    <section className="display_repo">
       {/* <header className="repo_header">
         <h1 className="logo">Favvy</h1>
         <input type="text" autoFocus placeholder="search..." />
@@ -48,7 +48,7 @@ const Home = () => {
 
       
 
-      <div>
+      <div className="display_repo_container">
         {/* {repos.map((repo) => (
           <EachRepo key={repo.id} repo={repo} />
         ))} */}
@@ -58,7 +58,7 @@ const Home = () => {
         ))}
       </div>
 
-      <div className="repo_container-pagination">
+      <div className="display_repo-pagination">
         <button
           disabled={currentPage <= 1}
           onClick={() => setCurrentPage((prev) => prev - 1)}

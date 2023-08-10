@@ -1,5 +1,6 @@
-/* eslint-disable default-case */
-const setDate = () => {
+import { useState, useEffect } from "react";
+
+const SetDate = () => {
   const dateObj = new Date();
 
   const month = dateObj.getMonth();
@@ -46,14 +47,24 @@ const setDate = () => {
   const date = `${monthName} 
     ${dateObj.getDate()}, 
     ${dateObj.getFullYear()} 
-    (${dateObj.getHours() < 10 ? dateObj.getHours() + "0" : dateObj.getHours()}:
+    (${dateObj.getHours() < 10 ? "0" + dateObj.getHours(): dateObj.getHours()}:
     ${
       dateObj.getMinutes() < 10
         ? "0" + dateObj.getMinutes()
         : dateObj.getMinutes()
-    })`;
-  return date;
+    } : ${
+    dateObj.getSeconds() > 10
+      ? "0" + dateObj.getSeconds()
+      : dateObj.getSeconds()
+  })`;
+
+  const [currentDate, setCurrentdate] = useState(date);
+  useEffect(() => {
+    setTimeout(() => setCurrentdate(date), 1000);
+  }, [date]);
+  return currentDate;
 };
+
 // This is for the date formats
 
-export default setDate;
+export default SetDate;

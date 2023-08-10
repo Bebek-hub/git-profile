@@ -19,7 +19,10 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       // render this url
-      return <h1 className="error_boundary">An error just occured</h1>;
+      return <div className="error_boundary">
+        <h1>An error just occured</h1>
+        {/* <p>{hasError.message}</p> */}
+      </div>;
     }
 
     // eslint-disable-next-line react/prop-types
