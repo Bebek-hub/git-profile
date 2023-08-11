@@ -44,19 +44,23 @@ const SetDate = () => {
       break;
   }
 
+  let seconds =
+    dateObj.getSeconds() < 10
+      ? "0" + dateObj.getSeconds()
+      : dateObj.getSeconds();
+
+  let minutes =
+    dateObj.getMinutes() < 10
+      ? "0" + dateObj.getMinutes()
+      : dateObj.getMinutes();
+
+  let hours =
+    dateObj.getHours() < 10 ? "0" + dateObj.getHours() : dateObj.getHours();
+
   const date = `${monthName} 
     ${dateObj.getDate()}, 
     ${dateObj.getFullYear()} 
-    (${dateObj.getHours() < 10 ? "0" + dateObj.getHours(): dateObj.getHours()}:
-    ${
-      dateObj.getMinutes() < 10
-        ? "0" + dateObj.getMinutes()
-        : dateObj.getMinutes()
-    } : ${
-    dateObj.getSeconds() > 10
-      ? "0" + dateObj.getSeconds()
-      : dateObj.getSeconds()
-  })`;
+    (${hours}: ${minutes} : ${seconds})`;
 
   const [currentDate, setCurrentdate] = useState(date);
   useEffect(() => {

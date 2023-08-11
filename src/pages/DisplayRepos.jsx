@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import EachRepo from "../components/EachRepo";
 import ErrorPage from "../components/ErrorPage";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const Home = () => {
   const [repos, setRepos] = useState([]);
@@ -36,9 +37,9 @@ const Home = () => {
 
   return (
     <>
-    <Header />
-    <section className="display_repo">
-      {/* <header className="repo_header">
+      <Header />
+      <section className="display_repo">
+        {/* <header className="repo_header">
         <h1 className="logo">Favvy</h1>
         <input type="text" autoFocus placeholder="search..." />
         <button className="btn">
@@ -46,54 +47,47 @@ const Home = () => {
         </button>
       </header> */}
 
-      
-
-      <div className="display_repo_container">
-        {/* {repos.map((repo) => (
+        <div className="display_repo_container">
+          {/* {repos.map((repo) => (
           <EachRepo key={repo.id} repo={repo} />
         ))} */}
 
-        {repos?.slice(skip, skip + perPage).map((repo) => (
-          <EachRepo key={repo.id} repo={repo} />
-        ))}
-      </div>
+          {repos?.slice(skip, skip + perPage).map((repo) => (
+            <EachRepo key={repo.id} repo={repo} />
+          ))}
+        </div>
 
-      <div className="display_repo-pagination">
-        <button
-          disabled={currentPage <= 1}
-          onClick={() => setCurrentPage((prev) => prev - 1)}
-        >
-          Prev
-        </button>
-        <p className="pagination">
-          Pages: {currentPage} of {pages}
-        </p>
-        {
+        <div className="display_repo-pagination">
+          <button
+            disabled={currentPage <= 1}
+            aria-disabled={currentPage >= pages}
+            onClick={() => setCurrentPage((prev) => prev - 1)}
+          className="page_btn">
+            Prev
+          </button>
+
+          {Array.from({ length: pages }, (value, index) => index + 1).map(
+            (each) => (
+              <button key={each} onClick={() => setCurrentPage(each)} className="page_btn">
+                {each}
+              </button>
+            )
+          )}
+
           <button
             disabled={currentPage >= pages}
             aria-disabled={currentPage >= pages}
             onClick={() => setCurrentPage((prev) => prev + 1)}
-          >
+            className="page_btn">
             next
           </button>
-        }
-        {/* another magic here */}
-        {/* {Array.from({ length: pages }, (value, index) => index + 1).map(
-          (each) => (
-            // eslint-disable-next-line react/jsx-key
-            <button onClick={() => setCurrentPage(each)}>{each}</button>
-          )
-        )} */}
-
-        {Array.from({ length: pages }, (value, index) => index + 1).map(
-          (each) => (
-            <button key={each} onClick={() => setCurrentPage(each)}>
-              {each}
-            </button>
-          )
-        )}
-      </div>
-    </section>
+          
+        </div>
+        <p className="page_of_pages">
+            Pages: {currentPage} of {pages}
+          </p>
+      </section>
+      <Footer />
     </>
   );
 };

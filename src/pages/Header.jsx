@@ -14,7 +14,7 @@ const Header = () => {
           <Link to="https://github.com/Bebek-hub/" target="_blank" className="btn">
             <FaGithub />
           </Link>
-          <Link className="btn">
+          <Link to="https://hashnode.com/@Tioluwalope" target="_blank" className="btn">
             <SiHashnode />
           </Link>
           <Link className="btn">
