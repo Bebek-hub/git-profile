@@ -7,7 +7,7 @@ const Footer = () => {
     <section className="footer">
         <div className="footer_line"></div>
         <p className="footer_message">
-            &copy;Copyright; God&apos;sFavour Omoare
+            &copy;Copyright 2023; God&apos;sFavour Omoare
         </p>
         <div className="header_sub-icons">
           <Link to="https://github.com/Bebek-hub/" target="_blank" className="btn">

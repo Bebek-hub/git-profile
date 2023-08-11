@@ -20,18 +20,18 @@ const Home = () => {
           <h1>A display of my Github repository</h1>
 
           <a href="/display-repos">
-            <button className="home_container_content-link1">
+            <button className="home_container_content-link link1">
               Display Repo
             </button>
           </a>
 
-          <button className="home_container_content-link2">
+          <button className="home_container_content-link link2">
             How it is built
           </button>
         </div>
 
-        <div className="home_git_stat">
-          <p>My Github stats </p>
+        <div className="home_git_stat git_stat_container">
+          <h1>My Github stats </h1>
           <a
             href="https://github.com/Bebek-hub"
             target="_blank"

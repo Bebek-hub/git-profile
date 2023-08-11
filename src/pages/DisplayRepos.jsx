@@ -46,6 +46,7 @@ const Home = () => {
           <CiSearch />
         </button>
       </header> */}
+      <h2 className="display_repo_header">My Repositories</h2>
 
         <div className="display_repo_container">
           {/* {repos.map((repo) => (
