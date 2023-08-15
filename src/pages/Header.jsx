@@ -11,13 +11,13 @@ const Header = () => {
       <div className="header_sub">
         <p className="header_sub-date" ><SetDate /></p>
         <div className="header_sub-icons">
-          <Link to="https://github.com/Bebek-hub/" target="_blank" className="btn">
+          <Link to="https://github.com/Bebek-hub/" target="_blank" className="icon">
             <FaGithub />
           </Link>
-          <Link to="https://hashnode.com/@Tioluwalope" target="_blank" className="btn">
+          <Link to="https://hashnode.com/@Tioluwalope" target="_blank" className="icon">
             <SiHashnode />
           </Link>
-          <Link className="btn">
+          <Link className="icon">
           <MdOutlineLightMode />
           </Link>
           

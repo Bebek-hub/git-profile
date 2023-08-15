@@ -60,7 +60,7 @@ const SetDate = () => {
   const date = `${monthName} 
     ${dateObj.getDate()}, 
     ${dateObj.getFullYear()} 
-    (${hours}: ${minutes} : ${seconds})`;
+    (${hours} : ${minutes} : ${seconds})`;
 
   const [currentDate, setCurrentdate] = useState(date);
   useEffect(() => {

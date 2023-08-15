@@ -39,20 +39,11 @@ const Home = () => {
     <>
       <Header />
       <section className="display_repo">
-        {/* <header className="repo_header">
-        <h1 className="logo">Favvy</h1>
-        <input type="text" autoFocus placeholder="search..." />
-        <button className="btn">
-          <CiSearch />
-        </button>
-      </header> */}
-      <h2 className="display_repo_header">My Repositories</h2>
-
         <div className="display_repo_container">
           {/* {repos.map((repo) => (
           <EachRepo key={repo.id} repo={repo} />
         ))} */}
-
+{ console.log(repos)}
           {repos?.slice(skip, skip + perPage).map((repo) => (
             <EachRepo key={repo.id} repo={repo} />
           ))}
@@ -63,13 +54,18 @@ const Home = () => {
             disabled={currentPage <= 1}
             aria-disabled={currentPage >= pages}
             onClick={() => setCurrentPage((prev) => prev - 1)}
-          className="page_btn">
+            className="page_btn"
+          >
             Prev
           </button>
 
           {Array.from({ length: pages }, (value, index) => index + 1).map(
             (each) => (
-              <button key={each} onClick={() => setCurrentPage(each)} className="page_btn">
+              <button
+                key={each}
+                onClick={() => setCurrentPage(each)}
+                className="page_btn"
+              >
                 {each}
               </button>
             )
@@ -79,14 +75,14 @@ const Home = () => {
             disabled={currentPage >= pages}
             aria-disabled={currentPage >= pages}
             onClick={() => setCurrentPage((prev) => prev + 1)}
-            className="page_btn">
+            className="page_btn"
+          >
             next
           </button>
-          
         </div>
         <p className="page_of_pages">
-            Pages: {currentPage} of {pages}
-          </p>
+          Pages: {currentPage} of {pages}
+        </p>
       </section>
       <Footer />
     </>

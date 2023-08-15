@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@400;500;600;700;800;900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@400;500;600;700;800;900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -20,7 +19,7 @@
 body {
   background-color: var(--main-color);
   color: var(--white-color);
-  font-family: 'Noto Sans Display', sans-serif;
+  font-family: "Noto Sans Display", sans-serif;
   display: grid;
   overflow-y: scroll;
   /* font-family: 'Prompt', Helvetica, Arial, sans-serif; */
@@ -42,8 +41,6 @@ body {
   justify-content: space-between;
   position: fixed;
   width: 100%;
-  /* top: 0;
-  overflow: hidden; */
 }
 
 .header_logo {
@@ -65,21 +62,20 @@ body {
   margin-top: 1rem;
 }
 
-.btn {
+.icon {
   font-size: 1.6rem;
   color: var(--white-color-trans);
 }
 
+.icon:hover {
+  color: var(--white-color);
+}
 
 /* styling home page */
 
 .home_container {
   padding: 14rem 1.5rem 1.5rem;
-}
-
-.home_container p {
-  font-size: 1.5rem;
-  color: var(--white-color-trans);
+  text-align: center;
 }
 
 .home_image_container {
@@ -87,11 +83,24 @@ body {
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
+  margin-bottom: 3rem;
 }
 
-.home_image {
+.home_my_image {
   border-radius: 10rem;
-  width: 18rem;
+  width: 14rem;
+}
+
+.home_container p {
+  font-size: 1.2rem;
+  color: var(--white-color-trans);
+  line-height: 2rem;
+}
+
+.home_container_content-button {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .home_container_content-link {
@@ -112,7 +121,8 @@ body {
 }
 
 .link1:hover,
-.link2:hover {
+.link2:hover,
+.error-page_link:hover {
   color: var(--white-color);
   background-color: var(--light-main-color);
 }
@@ -144,11 +154,6 @@ body {
   padding: 10rem 1.5rem;
 }
 
-.display_repo_header {
-  padding-bottom: 1rem;
-}
-
-
 /* styling each-repo page */
 .display_repo_container {
   display: grid;
@@ -170,10 +175,49 @@ body {
 .each_repo:hover,
 .page_btn:hover {
   cursor: pointer;
-  box-shadow: rgba(252, 252, 253, 0.25) 0px 6px 12px -2px, rgba(181, 180, 182, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(252, 252, 253, 0.25) 0px 6px 12px -2px,
+    rgba(181, 180, 182, 0.3) 0px 3px 7px -3px;
   opacity: 0.9;
 }
 
+.each_repo_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.each_repo_search {
+  display: flex;
+  gap: 1rem;
+}
+
+.each_repo_head input {
+  padding: 0.5rem;
+  color: var(--white-color-trans);
+  font-size: 1rem;
+  background: transparent;
+  border: 1px solid var(--white-color-trans);
+  border-radius: 0.2rem;
+  width: 100%;
+  overflow-y: scroll;
+  opacity: 0.8;
+}
+
+input:focus {
+  outline: 1px solid var(--white-color);
+}
+
+input:hover {
+  border: 2px solid var(--white-color);
+}
+
+::placeholder {
+  font-size: 1rem;
+}
+
+.each_repo_header {
+  padding-bottom: 1rem;
+}
 
 /* Pagination */
 
@@ -200,7 +244,6 @@ body {
   padding-top: 1rem;
 }
 
-
 /* Error page */
 .error_container,
 .error_boundary {
@@ -212,19 +255,28 @@ body {
 }
 
 .error_container h1 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .error_container p:nth-of-type(1) {
   padding-top: 0.8rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .error_container-message {
   font-style: italic;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 1rem 0;
   color: var(--red-color);
+}
+
+.error-page_link {
+  text-decoration: none;
+  color: var(--main-color);
+  background-color: var(--white-color);
+  border: 1px solid var(--white-color-trans);
+  border-radius: 0.5rem;
+  padding: 0.3rem 1.5rem;
 }
 
 /* styling the footer */
@@ -234,5 +286,43 @@ body {
 
 .footer_line {
   border: 1px solid var(--light-main-color);
+  margin-bottom: 1rem;
 }
 
+@media screen and (min-width: 620px) {
+  .home_image_container {
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .home_my_image {
+    border-radius: 10rem;
+    width: 18rem;
+  }
+
+  .home_container p {
+    font-size: 1.2rem;
+    color: var(--white-color-trans);
+    line-height: 2rem;
+    text-align: justify;
+  }
+}
+
+@media screen and (min-width: 920px) {
+  .home_container,
+  .display_repo {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home_container_content-button,
+  .git_stat_img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
