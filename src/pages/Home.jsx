@@ -66,8 +66,6 @@ const Home = () => {
               />
             </a>
           </div>
-
-          {/* <a href="https://github-readme-stats.vercel.app/api?username=bebek-hub&show_icons=true&include_all_commits=true&hide_border=true">Click me</a> */}
         </div>
       </div>
 

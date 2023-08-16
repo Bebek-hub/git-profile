@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import EachRepo from "../components/EachRepo";
 import ErrorPage from "../components/ErrorPage";
 import Header from "./Header";
+import Search from "../components/Search";
 import Footer from "./Footer";
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
         .then((response) => response.json())
         .then((data) => {
           setRepos(data);
+          if (!data) return <p>Loading...</p>;
         })
         .catch((err) => {
           setErrors(err.message);
@@ -38,12 +40,10 @@ const Home = () => {
   return (
     <>
       <Header />
+
+      <Search />
       <section className="display_repo">
         <div className="display_repo_container">
-          {/* {repos.map((repo) => (
-          <EachRepo key={repo.id} repo={repo} />
-        ))} */}
-{ console.log(repos)}
           {repos?.slice(skip, skip + perPage).map((repo) => (
             <EachRepo key={repo.id} repo={repo} />
           ))}

@@ -12,8 +12,6 @@
   --white-color: #ffffff;
   --white-color-trans: #ffffffb6;
   --red-color: #f17a7a;
-  --main-padding: 1.5rem;
-  --main-margin: 1rem;
 }
 
 body {
@@ -74,7 +72,7 @@ body {
 /* styling home page */
 
 .home_container {
-  padding: 14rem 1.5rem 1.5rem;
+  padding:  14rem 1.5rem 1.5rem;
   text-align: center;
 }
 
@@ -127,11 +125,6 @@ body {
   background-color: var(--light-main-color);
 }
 
-/* .link2:hover {
-  background-color: var(--);
-  color: var(--main-color);
-} */
-
 .home_container-content,
 .home_git_stat {
   display: flex;
@@ -145,13 +138,21 @@ body {
   margin-top: 3rem;
 }
 
+.git_stat_img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .home_git_stat img {
   width: 25rem;
 }
 
 /* styling the display-repo */
 .display_repo {
-  padding: 10rem 1.5rem;
+  /* padding: 10rem 1.5rem; */
+  padding: 0 1.5rem;
 }
 
 /* styling each-repo page */
@@ -180,18 +181,21 @@ body {
   opacity: 0.9;
 }
 
-.each_repo_head {
+/* styling search */
+
+.search_container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 11rem 1.5rem 1.5rem;
 }
 
-.each_repo_search {
+.search {
   display: flex;
   gap: 1rem;
 }
 
-.each_repo_head input {
+.search input {
   padding: 0.5rem;
   color: var(--white-color-trans);
   font-size: 1rem;
@@ -215,8 +219,8 @@ input:hover {
   font-size: 1rem;
 }
 
-.each_repo_header {
-  padding-bottom: 1rem;
+.repo_header {
+  padding: 1rem 1.5rem;
 }
 
 /* Pagination */
