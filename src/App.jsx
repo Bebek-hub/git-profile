@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import DisplayRepos from "./pages/DisplayRepos";
-import ErrorPage from "./components/ErrorPage";
+import ErrorPage from "./pages/ErrorPage";
 // import { Suspense } from "react"
 import ErrorBoundary from "./components/ErrorBoundary";
 

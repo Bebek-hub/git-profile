@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 // import { CiSearch } from "react-icons/ci";
 import EachRepo from "../components/EachRepo";
-import ErrorPage from "../components/ErrorPage";
+import ErrorPage from "./ErrorPage";
 import Header from "./Header";
 import Search from "../components/Search";
 import Footer from "./Footer";

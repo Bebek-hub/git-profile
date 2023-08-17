@@ -4,19 +4,23 @@ import { IoIosArrowBack } from "react-icons/io";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
 
-function Search(repos) {
+// eslint-disable-next-line react/prop-types
+function Search({ repos }) {
   const [text, setText] = useState("");
   const [showSearch, setShowSearch] = useState(false);
-  const [filteredRepo, setFilteredRepo] = useState("");
-  console.log(text)
+  const [filteredRepo, setFilteredRepo] = useState(repos);
 
   const handleSearch = () => {
     setFilteredRepo(
+      // eslint-disable-next-line react/prop-types
       repos.filter((repo) => {
+        
         if (repo.title.toLowerCase().match(text.toLocaleLowerCase())) {
+          console.log(filteredRepo);
           return repo;
+          
         } else {
-          return <p>No Repository found</p>
+          return <p>No Repository found</p>;
         }
       })
     );
@@ -25,9 +29,9 @@ function Search(repos) {
     <>
       <div className="search_container">
         <div>
-        <Link to={"/"} className="page_btn">
-          <IoIosArrowBack />
-        </Link>
+          <Link to={"/"} className="page_btn">
+            <IoIosArrowBack />
+          </Link>
         </div>
         <div className="search">
           <input
