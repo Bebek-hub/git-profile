@@ -41,7 +41,8 @@ const Home = () => {
     <>
       <Header />
 
-      {/* <Search /> don't forget to edit the css when you work on this */}
+      {/* <Search /> */}
+      {/* don't forget to edit the css when you work on this  */}
       <section className="display_repo">
         <div className="display_repo_container">
           {repos?.slice(skip, skip + perPage).map((repo) => (
