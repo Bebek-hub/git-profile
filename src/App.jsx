@@ -10,17 +10,17 @@ function App() {
     <main>
       <BrowserRouter>
         <ErrorBoundary>
-        {/* <Suspense fallback={<h1>Hola...</h1>}> */}
-        <Routes>
-              <Route path="/" element={<Home />} />
+          {/* <Suspense fallback={<h1>Hola...</h1>}> */}
+          <Routes>
+            <Route path="/" element={<Home />} />
 
             <Route path="display-repos" element={<DisplayRepos />} />
 
             <Route path="*" element={<ErrorPage />} />
 
             {/* This shows an error page when an unknown url is added */}
-        </Routes>
-        {/* </Suspense> */}
+          </Routes>
+          {/* </Suspense> */}
         </ErrorBoundary>
       </BrowserRouter>
     </main>
