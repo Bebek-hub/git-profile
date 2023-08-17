@@ -151,8 +151,8 @@ body {
 
 /* styling the display-repo */
 .display_repo {
-  /* padding: 10rem 1.5rem; */
-  padding: 0 1.5rem;
+  padding: 10rem 1.5rem;
+  /* padding: 0 1.5rem; */
 }
 
 /* styling each-repo page */

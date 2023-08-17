@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import EachRepo from "../components/EachRepo";
 import ErrorPage from "./ErrorPage";
 import Header from "./Header";
-import Search from "../components/Search";
+// import Search from "../components/Search";
 import Footer from "./Footer";
 
 const Home = () => {
@@ -41,7 +41,7 @@ const Home = () => {
     <>
       <Header />
 
-      <Search />
+      {/* <Search /> don't forget to edit the css when you work on this */}
       <section className="display_repo">
         <div className="display_repo_container">
           {repos?.slice(skip, skip + perPage).map((repo) => (
